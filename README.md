@@ -94,10 +94,10 @@ customer-shopping-analysis/
 
 ---
 
+
 ## Dashboard Preview
 
-![Dashboard](images/dashboard.png)
-
+![Dashboard](image/dashboard.png)
 ---
 
 ## Author
