@@ -1,0 +1,34 @@
+import pandas as pd
+df=pd.read_csv("/content/customer_shopping_behavior.csv")
+df.info()
+df.describe()
+df.describe(include="all")
+df.isnull()
+df.isnull().sum()
+df["Review Rating"]=df["Review Rating"].fillna(df["Review Rating"].median())
+df.isnull().sum()
+df.columns
+df.columns=df.columns.str.lower()
+df.columns
+df.columns=df.columns.str.replace(' ','_')
+df.columns
+df.rename(columns={'purchase_amount_(usd)':'purchase_amount'}, inplace=True)
+df.columns
+bins=[0,25,45,60,100]
+labels=['young','adult','middle','senior']
+df['age_group']=pd.cut(df['age'],bins=bins,labels=labels)
+print(df[['age', 'age_group']].head(10))
+frequency_mapping={
+    'fortnightly':14,
+    'weekly':7,
+    'monthly':30,
+    'quarterly':90,
+    'bi-weekly':14,
+    'annually':365,
+    'every 3 months':90
+}
+df['purchase_frequency_days']=df['frequency_of_purchases'].str.lower().map(frequency_mapping)
+df[['frequency_of_purchases','purchase_frequency_days']].head(10)
+df[['discount_applied','promo_code_used']].head(10)
+(df['discount_applied']==df['promo_code_used']).all()
+df.columns
