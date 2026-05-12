@@ -97,7 +97,7 @@ customer-shopping-analysis/
 
 ## Dashboard Preview
 
-![Dashboard](images/customer-shopping-bahavior.png)
+![Dashboard](image/customer-shopping-bahavior.png)
 
 ## Author
 
